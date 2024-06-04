@@ -104,62 +104,61 @@
                     $quantity = mysqli_fetch_assoc($result);
                     if(!isset($quantity["Quantità"])) $quantity = 0;
                     else $quantity = $quantity["Quantità"];
-                        if($row["Attacco"] === "-1") $row["Attacco"] = "?";
-                        if($row["Difesa"] === "-1") $row["Difesa"] = "?";
-                        echo "<div class='results-container'>";
-                        echo "<table>";
-                        switch($row["Tipo"]){
-                            case "Monster":
-                                echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
-                                echo "<tr><td>Attribute</td><td>" . $row["Attributo"] . "</td></tr>";
-                                echo "<tr><td>Level</td><td>" . $row["Livello"]. "</td></tr>";
-                                echo "<tr><td>Properties</td><td>" . $row["Proprietà"] . "</td></tr>";
-                                echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
-                                echo "<tr><td>ATK</td><td>" . $row["Attacco"] . "</td></tr>";
-                                echo "<tr><td>DEF</td><td>" . $row["Difesa"] . "</td></tr>";
-                                break;
-                            case "XYZ":
-                                echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
-                                echo "<tr><td>Attribute</td><td>" . $row["Attributo"] . "</td></tr>";
-                                echo "<tr><td>Rank</td><td>" .  $row["Rango"] . "</td></tr>";
-                                echo "<tr><td>Properties</td><td>" . $row["Proprietà"] . "</td></tr>";
-                                echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
-                                echo "<tr><td>ATK</td><td>" . $row["Attacco"] . "</td></tr>";
-                                echo "<tr><td>DEF</td><td>" . $row["Difesa"] . "</td></tr>";
-                                break;
-                            case "Link":
-                                echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
-                                echo "<tr><td>Attribute</td><td>" . $row["Attributo"] . "</td></tr>";
-                                echo "<tr><td>Link Rating</td><td>" . $row["LinkRating"]  . "</td></tr>";
-                                echo "<tr><td>Properties</td><td>" . $row["Proprietà"] . "</td></tr>";
-                                echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
-                                echo "<tr><td>ATK</td><td>" . $row["Attacco"] . "</td></tr>";
-                                echo "<tr><td>DEF</td><td>" . $row["Difesa"] . "</td></tr>";
-                                break;
-                            case "Pendulum":
-                                echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
-                                echo "<tr><td>Attribute</td><td>" . $row["Attributo"] . "</td></tr>";
-                                echo "<tr><td>Level</td><td>" . $row["Livello"] . "</td></tr>";
-                                echo "<tr><td>Properties</td><td>" . $row["Proprietà"] . "</td></tr>";
-                                echo "<tr><td>Pendulum Effect</td><td>" . $row["EffettoPendulum"] . "</td></tr>";
-                                echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
-                                echo "<tr><td>ATK</td><td>" . $row["Attacco"] . "</td></tr>";
-                                echo "<tr><td>DEF</td><td>" . $row["Difesa"] . "</td></tr>";
-                                break;
-                            default:
-                                echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
-                                echo "<tr><td>Type</td><td>" . $row["TipoMagiaTrappola"] . "</td></tr>";
-                                echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
-                                break;
-                        }
-                        echo "<tr><td>Quantità</td><td>" . $quantity . "</td></tr>";      
-                        echo "</table>";
-                        echo "</div>";
-
+                    if($row["Attacco"] == "-1") $row["Attacco"] = "?";
+                    if($row["Difesa"] == "-1") $row["Difesa"] = "?";
+                    echo "<div class='results-container'>";
+                    echo "<table>";
+                    switch($row["Tipo"]){
+                        case "Monster":
+                            echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
+                            echo "<tr><td>Attribute</td><td>" . $row["Attributo"] . "</td></tr>";
+                            echo "<tr><td>Level</td><td>" . $row["Livello"]. "</td></tr>";
+                            echo "<tr><td>Properties</td><td>" . $row["Proprietà"] . "</td></tr>";
+                            echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
+                            echo "<tr><td>ATK</td><td>" . $row["Attacco"] . "</td></tr>";
+                            echo "<tr><td>DEF</td><td>" . $row["Difesa"] . "</td></tr>";
+                            break;
+                        case "XYZ":
+                            echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
+                            echo "<tr><td>Attribute</td><td>" . $row["Attributo"] . "</td></tr>";
+                            echo "<tr><td>Rank</td><td>" .  $row["Rango"] . "</td></tr>";
+                            echo "<tr><td>Properties</td><td>" . $row["Proprietà"] . "</td></tr>";
+                            echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
+                            echo "<tr><td>ATK</td><td>" . $row["Attacco"] . "</td></tr>";
+                            echo "<tr><td>DEF</td><td>" . $row["Difesa"] . "</td></tr>";
+                            break;
+                        case "Link":
+                            echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
+                            echo "<tr><td>Attribute</td><td>" . $row["Attributo"] . "</td></tr>";
+                            echo "<tr><td>Link Rating</td><td>" . $row["LinkRating"]  . "</td></tr>";
+                            echo "<tr><td>Properties</td><td>" . $row["Proprietà"] . "</td></tr>";
+                            echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
+                            echo "<tr><td>ATK</td><td>" . $row["Attacco"] . "</td></tr>";
+                            echo "<tr><td>DEF</td><td>" . $row["Difesa"] . "</td></tr>";
+                            break;
+                        case "Pendulum":
+                            echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
+                            echo "<tr><td>Attribute</td><td>" . $row["Attributo"] . "</td></tr>";
+                            echo "<tr><td>Level</td><td>" . $row["Livello"] . "</td></tr>";
+                            echo "<tr><td>Properties</td><td>" . $row["Proprietà"] . "</td></tr>";
+                            echo "<tr><td>Pendulum Effect</td><td>" . $row["EffettoPendulum"] . "</td></tr>";
+                            echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
+                            echo "<tr><td>ATK</td><td>" . $row["Attacco"] . "</td></tr>";
+                            echo "<tr><td>DEF</td><td>" . $row["Difesa"] . "</td></tr>";
+                            break;
+                        default:
+                            echo "<tr><td>Name</td><td>" . $row["Nome"] . "</td></tr>";
+                            echo "<tr><td>Type</td><td>" . $row["TipoMagiaTrappola"] . "</td></tr>";
+                            echo "<tr><td>Effect</td><td>" . $row["Effetto"] . "</td></tr>";
+                            break;
                     }
-                    else{echo "<div class='results-container'>0 risultati</div>";}
-                    mysqli_close($conn);
-                }
+                    echo "<tr><td>Quantità</td><td>" . $quantity . "</td></tr>";      
+                    echo "</table>";
+                    echo "</div>";
+                    }
+                else{echo "<div class='results-container'>0 risultati</div>";}
+                mysqli_close($conn);
+            }
                 
             if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["op"] != 'add'){
                 $servername = "localhost";
